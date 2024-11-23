@@ -18,6 +18,7 @@ public class DaemonDemo {
             //
             // }
         }, "线程1");
+
         t1.setDaemon(true); // 设置守护线程，需要在 start() 方法之前进行
         t1.start();
         // t1.setDaemon(true);
@@ -31,5 +32,4 @@ public class DaemonDemo {
 
         System.out.println(Thread.currentThread().getName() + "\t ----- end 主线程");
     }
-
 }

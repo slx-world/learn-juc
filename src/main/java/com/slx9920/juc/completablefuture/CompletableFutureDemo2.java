@@ -16,15 +16,12 @@ public class CompletableFutureDemo2 {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         FutureTask<String> futureTask = new FutureTask<>(() -> {
             System.out.println("----- come in FutureTask");
-
             try {
                 TimeUnit.SECONDS.sleep(5);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
             return "" + ThreadLocalRandom.current().nextInt(100);
-
         });
 
         new Thread(futureTask, "t1").start();
@@ -37,7 +34,5 @@ public class CompletableFutureDemo2 {
                 break;
             }
         }
-
     }
-
 }

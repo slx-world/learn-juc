@@ -28,20 +28,16 @@ public class CompletableFutureBuildDemo {
 
         CompletableFuture<String> completableFuture = CompletableFuture.supplyAsync(() -> {
             System.out.println(Thread.currentThread().getName());
-
             // 暂停线程几秒钟
             try {
                 TimeUnit.SECONDS.sleep(3);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
             return "hello supplyAsync";
-
         }, threadPool);
 
         System.out.println(completableFuture.get());
         threadPool.shutdown();
     }
-
 }

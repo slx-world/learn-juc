@@ -16,9 +16,7 @@ public class CompletableFutureDemo {
         t1.start();
         System.out.println("main running...");
         System.out.println(futureTask.get(2, TimeUnit.SECONDS));
-
     }
-
 }
 
 class MyThread implements Callable<String> {
@@ -34,7 +32,5 @@ class MyThread implements Callable<String> {
         }
 
         return "hello Callable";
-
     }
-
 }
